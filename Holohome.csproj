@@ -843,6 +843,12 @@
     <Compile Include="Assets\Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
     <Compile Include="Assets\Assets\HoloToolkit-UnitTests\Input\TestEventHandler.cs" />
     <Compile Include="Assets\Assets\HoloToolkit-UnitTests\Utilities\ReflectionTestBehaviour.cs" />
+    <Compile Include="Assets\ContentButton.cs" />
+    <Compile Include="Assets\GazeGestureManagerLowerButton.cs" />
+    <Compile Include="Assets\HoloButton.cs" />
+    <Compile Include="Assets\PannelGestureManager.cs" />
+    <Compile Include="Assets\SelectedButton.cs" />
+    <Compile Include="Assets\TogglePannel1.cs" />
     <Compile Include="Assets\TutorialAssets\Assets\Scripts\GazeGestureManager.cs" />
     <Compile Include="Assets\TutorialAssets\Assets\Scripts\KeywordManager.cs" />
     <Compile Include="Assets\TutorialAssets\Assets\Scripts\SpeechManager.cs" />

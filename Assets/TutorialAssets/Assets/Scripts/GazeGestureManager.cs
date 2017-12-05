@@ -8,17 +8,17 @@ public class GazeGestureManager : MonoBehaviour {
 
     public static GazeGestureManager Instance { get; private set; }
 
-    public Button popUp;
+    
     // Represents the hologram that is currently being gazed at.
     public GameObject FocusedObject { get; private set; }
-
+    public Button popUp;
     UnityEngine.XR.WSA.Input.GestureRecognizer recognizer;
 
     // Use this for initialization
     void Start()
     {
         Instance = this;
-        popUp.gameObject.SetActive(false);
+        
         // Set up a GestureRecognizer to detect Select gestures.
         recognizer = new UnityEngine.XR.WSA.Input.GestureRecognizer();
         recognizer.TappedEvent += (source, tapCount, ray) =>
@@ -26,11 +26,14 @@ public class GazeGestureManager : MonoBehaviour {
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null)
             {
-                if (FocusedObject.gameObject.tag == "Button")  // comment out if u want it to turn on and off
+                
+                if (FocusedObject.gameObject.tag == "FridgeLowerDoor")  
                 {
-                    FocusedObject.SendMessageUpwards("HighlightButton");
+                    FocusedObject.gameObject.SetActive(false);
+                    popUp.gameObject.SetActive(true);
+                    
                 }
-                FocusedObject.SendMessageUpwards("OnSelect");    
+               
             }
         };
         recognizer.StartCapturingGestures();
@@ -52,14 +55,6 @@ public class GazeGestureManager : MonoBehaviour {
         {
             // If the raycast hit a hologram, use that as the focused object.
             FocusedObject = hitInfo.collider.gameObject;
-            if (hitInfo.collider.gameObject.tag == "Fridge")
-            {
-                OnSelect();
-            }
-            if (FocusedObject.tag == "Button")
-            {
-                HighlightButton();
-            }
         }
         else
         {
@@ -76,12 +71,5 @@ public class GazeGestureManager : MonoBehaviour {
         }
     }
 
-     void OnSelect()
-    {
-        popUp.gameObject.SetActive(true);
-    }
-    void HighlightButton()
-    {
-        popUp.Select();
-    }
+     
 }

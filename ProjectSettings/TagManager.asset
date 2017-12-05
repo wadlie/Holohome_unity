@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fridge
   - Button
+  - FridgeLowerDoor
+  - FridgeUpperDoor
   layers:
   - Default
   - TransparentFX
