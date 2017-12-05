@@ -19,7 +19,7 @@ public class GazeGestureManagerLowerButton : MonoBehaviour
     void Start()
     {
         Instance = this;
-
+        
         // Set up a GestureRecognizer to detect Select gestures.
         recognizer = new UnityEngine.XR.WSA.Input.GestureRecognizer();
         recognizer.TappedEvent += (source, tapCount, ray) =>
