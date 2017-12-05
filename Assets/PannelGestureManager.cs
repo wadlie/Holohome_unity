@@ -26,7 +26,7 @@ public class PannelGestureManager : MonoBehaviour
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null)
             {
-                if(FocusedObject.gameObject.tag == "Button")
+                if(FocusedObject.tag == "Button")
                 {
                     FocusedObject.SendMessageUpwards("OnClick");
                 }
